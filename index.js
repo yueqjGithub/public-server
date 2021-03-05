@@ -13,7 +13,6 @@ app.use(morgan('short', {stream: accessLogStream}));
 
 app.get('/webStart', function (req, res) {
   handlers.webStart(req, res)
-  // res.send('hill')
 })
 
 
