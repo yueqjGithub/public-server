@@ -19,25 +19,11 @@ exports.webStart = function (req, res) {
         res.send(JSON.stringify(result))
       })
     } else {
-      exec(`npx kill-port ${pagePorts.webPort}`, function (killErr, stdout1, stderr1) {
-        if (killErr) {
-         fs.writeFile(path.join(__dirname+'/logs/', 'error_kill.log'), killErr, { 'flag': 'a' }, function () {
-           console.log('killErr==>', killErr)
-           let msg = {
-             code: 406,
-             message: '结束进程失败'
-           }
-           res.send(JOSN.stringify(msg))
-         })
-        } else {
-          exec(`cd ${targetPath} && npm run start`)
-          const result = {
-            code: 200,
-            message: '执行完成'
-          }
-          res.send(JSON.stringify(result))
-        }
-      })
+      const result = {
+        code: 200,
+        message: '执行完成'
+      }
+      res.send(JSON.stringify(result))
     }
   })
 }
