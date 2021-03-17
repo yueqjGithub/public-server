@@ -15,8 +15,9 @@ app.get('/webStart', function (req, res) {
   handlers.webStart(req, res)
 })
 
-
-const server = app.listen(3001, function () {
+const port = process.env.port
+console.log('port===', port)
+const server = app.listen(port, function () {
   let host = server.address().address;
   let port = server.address().port;
   console.log('Example app listening at http://%s:%s', host, port);
