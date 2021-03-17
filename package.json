@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "serve": "set PORT=3003 && node index.js"
+    "serve": "node index.js --p"
   },
   "author": "yqj",
   "license": "ISC"

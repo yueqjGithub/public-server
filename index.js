@@ -15,8 +15,7 @@ app.get('/webStart', function (req, res) {
   handlers.webStart(req, res)
 })
 
-const port = process.env.port
-console.log('port===', port)
+const port = process.argv.pop()
 const server = app.listen(port, function () {
   let host = server.address().address;
   let port = server.address().port;
