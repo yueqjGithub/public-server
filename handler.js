@@ -1,7 +1,8 @@
 const { exec } = require('child_process');
 const path = require('path');
-
-const targetPath = 'D:/work/next-pc/home-page-pc/'
+// process.argv[process.argv.length - 2]
+// const targetPath = 'D:/work/next-pc/home-page-pc/'
+const targetPath = process.argv[process.argv.length - 1]
 const pagePorts = {
   webPort: 3000,
   mobilePort: 3002
